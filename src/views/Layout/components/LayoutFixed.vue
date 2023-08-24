@@ -15,9 +15,11 @@ const {y} = useScroll(window)
       <RouterLink class="logo" to="/" />
       <!-- 导航区域 -->
       <ul class="app-header-nav ">
+        <li class="home">
+          <RouterLink to="/">首页</RouterLink>
+        </li>
         <li className="home" v-for="item in categoryStore.categoryList" :key="item.id">
-          <!--          <RouterLink to="/">首页</RouterLink>-->
-          <RouterLink to="/">{{item.name}}</RouterLink>
+          <RouterLink :to="`/category/${item.id}`">{{item.name}}</RouterLink>
         </li>
 <!--        <li>-->
 <!--          <RouterLink to="/">居家</RouterLink>-->
