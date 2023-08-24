@@ -19,7 +19,7 @@ const {y} = useScroll(window)
           <RouterLink to="/">首页</RouterLink>
         </li>
         <li className="home" v-for="item in categoryStore.categoryList" :key="item.id">
-          <RouterLink :to="`/category/${item.id}`">{{item.name}}</RouterLink>
+          <RouterLink active-class="active" :to="`/category/${item.id}`">{{item.name}}</RouterLink>
         </li>
 <!--        <li>-->
 <!--          <RouterLink to="/">居家</RouterLink>-->
