@@ -24,30 +24,6 @@ const {y} = useScroll(window)
 <!--        <li>-->
 <!--          <RouterLink to="/">居家</RouterLink>-->
 <!--        </li>-->
-<!--        <li>-->
-<!--          <RouterLink to="/">美食</RouterLink>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <RouterLink to="/">服饰</RouterLink>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <RouterLink to="/">母婴</RouterLink>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <RouterLink to="/">个护</RouterLink>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <RouterLink to="/">严选</RouterLink>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <RouterLink to="/">数码</RouterLink>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <RouterLink to="/">运动</RouterLink>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <RouterLink to="/">杂项</RouterLink>-->
-<!--        </li>-->
       </ul>
 
       <div class="right">
