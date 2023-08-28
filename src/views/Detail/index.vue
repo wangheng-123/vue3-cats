@@ -4,15 +4,16 @@ import {onMounted, ref} from "vue";
 import {getDetail} from "@/apis/detail";
 import {useRoute} from "vue-router";
 import DetailHot from "@/views/Detail/components/DetailHot.vue";
+import ImageView from '@/components/ImageView/index.vue'
 
 const goods = ref({})
 const route = useRoute()
-const getGoods = async ()=>{
+const getGoods = async () => {
   const res = await getDetail(route.params.id);
   goods.value = res.result
 }
 
-onMounted(()=>getGoods())
+onMounted(() => getGoods())
 
 </script>
 
@@ -23,9 +24,9 @@ onMounted(()=>getGoods())
         <el-breadcrumb separator=">">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
           <!--  错误原因: goods一开始是空对象{}，{}。categories -> undefined -> undefined[1]  -->
-          <el-breadcrumb-item :to="{ path: `/category/${goods.categories[1].id}` }">{{goods.categories[1].name}}
+          <el-breadcrumb-item :to="{ path: `/category/${goods.categories[1].id}` }">{{ goods.categories[1].name }}
           </el-breadcrumb-item>
-          <el-breadcrumb-item :to="{ path: `/category/sub/${goods.categories[0].id}` }">{{goods.categories[0].name}}
+          <el-breadcrumb-item :to="{ path: `/category/sub/${goods.categories[0].id}` }">{{ goods.categories[0].name }}
           </el-breadcrumb-item>
           <el-breadcrumb-item>抓绒保暖，毛毛虫子儿童运动鞋</el-breadcrumb-item>
         </el-breadcrumb>
@@ -36,12 +37,12 @@ onMounted(()=>getGoods())
           <div class="goods-info">
             <div class="media">
               <!-- 图片预览区 -->
-
+              <ImageView/>
               <!-- 统计数量 -->
               <ul class="goods-sales">
                 <li>
                   <p>销量人气</p>
-                  <p>{{goods.salesCount}}+</p>
+                  <p>{{ goods.salesCount }}+</p>
                   <p><i class="iconfont icon-task-filling"></i>销量人气</p>
                 </li>
                 <li>
@@ -66,8 +67,8 @@ onMounted(()=>getGoods())
               <p class="g-name"> {{ goods.name }} </p>
               <p class="g-desc">{{ goods.desc }}</p>
               <p class="g-price">
-                <span>{{goods.oldPrice}}</span>
-                <span> {{goods.price}}</span>
+                <span>{{ goods.oldPrice }}</span>
+                <span> {{ goods.price }}</span>
               </p>
               <div class="g-service">
                 <dl>
@@ -108,8 +109,8 @@ onMounted(()=>getGoods())
                   <!-- 属性 -->
                   <ul class="attrs">
                     <li v-for="item in goods.details.properties" :key="item.value">
-                      <span class="dt">{{item.name}}</span>
-                      <span class="dd">{{item.value}}</span>
+                      <span class="dt">{{ item.name }}</span>
+                      <span class="dd">{{ item.value }}</span>
                     </li>
                   </ul>
                   <!-- 图片 -->
@@ -269,7 +270,7 @@ onMounted(()=>getGoods())
       flex: 1;
       position: relative;
 
-      ~li::after {
+      ~ li::after {
         position: absolute;
         top: 10px;
         left: 0;
@@ -323,7 +324,7 @@ onMounted(()=>getGoods())
       font-size: 18px;
       position: relative;
 
-      >span {
+      > span {
         color: $priceColor;
         font-size: 16px;
         margin-left: 10px;
@@ -357,7 +358,7 @@ onMounted(()=>getGoods())
     }
   }
 
-  >img {
+  > img {
     width: 100%;
   }
 }
